@@ -1,6 +1,10 @@
+<%= link_to 'Sign out', destroy_member_session_path, method: :delete %>
 <% @posts.each do |post| %>
   <div>
     <h3><%= post.title %></h3>
     <p><%= post.body %></h3>
+  <% if member_signed_in? %>
+    <p><%= post.member.name %></p>
+  <% end %>
   </div>
 <% end %>

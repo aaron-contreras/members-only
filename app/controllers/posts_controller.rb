@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :authenticate_member!, only: [:new, :create]
 
   def index
-    @posts = Post.all
+    @posts = Post.most_recent_first
   end
 
   def new

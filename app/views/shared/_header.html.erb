@@ -1,15 +1,15 @@
-<nav class="navbar is-light content is-large colored-navbar">
+<nav class="navbar is-light colored-navbar">
   <!-- Navbar brand -->
   <div class="navbar-brand">
 
-    <%= link_to root_path, class: 'navbar-item title mb-0' do %>
+    <div class="navbar-item content is-medium mb-0">
       <span class="icon-text">
         <span>MEMBERS ONLY&nbsp;</span>
         <span class="icon is-small">
           <i class="fas fa-mask"></i>&nbsp;
         </span>
       </span>
-    <% end %>
+    </div>
 
     <div role="button" class="navbar-burger" data-target="navMenu"
          aria-label="menu" aria-expanded="false">
@@ -26,10 +26,10 @@
 
     <!-- Navbar start -->
     <div class="navbar-start">
-      <%= link_to 'Posts', posts_path, class: 'navbar-item' %>
-    </div>
+      <%= link_to 'About', about_path, class: 'navbar-item' %>
 
-    <div class="navbar-start">
+      <%= link_to 'Posts', posts_path, class: 'navbar-item' %>
+
       <%= link_to 'New Post', new_post_path, class: 'navbar-item' %>
     </div>
     <!-- Navbar start -->

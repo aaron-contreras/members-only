@@ -18,13 +18,15 @@
     <%= render 'shared/header' %>
 
     <div class="container">
-      <div class="columns">
-        <div class="column"></div>
-        <div class="column is-two-thirds">
-          <%= yield %>
+      <section class="section">
+        <div class="columns">
+          <div class="column"></div>
+          <div class="column is-two-thirds">
+            <%= yield %>
+          </div>
+          <div class="column"></div>
         </div>
-        <div class="column"></div>
-      </div>
+      </section>
     </div>
 
   </body>

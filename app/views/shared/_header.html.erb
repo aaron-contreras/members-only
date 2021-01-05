@@ -1,0 +1,42 @@
+<nav class="navbar is-light content is-large colored-navbar">
+  <!-- Navbar brand -->
+  <div class="navbar-brand">
+
+    <%= link_to root_path, class: 'navbar-item title mb-0' do %>
+      <span class="icon-text">
+        <span>MEMBERS ONLY&nbsp;</span>
+        <span class="icon is-small">
+          <i class="fas fa-mask"></i>
+        </span>
+      </span>
+    <% end %>
+
+    <div role="button" class="navbar-burger" data-target="navMenu"
+         aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </div>
+
+  </div>
+  <!-- Navbar brand -->
+
+  <!-- Navbar menu -->
+  <div class="navbar-menu content is-medium" id="navMenu">
+
+    <!-- Navbar start -->
+    <div class="navbar-start">
+      <%= link_to 'Posts', posts_path, class: 'navbar-item' %>
+    </div>
+    <!-- Navbar start -->
+
+    <!-- Navbar end -->
+    <div class="navbar-end">
+      <%= render "shared/session_button_toggle" %>
+    </div>
+    <!-- Navbar end -->
+
+  </div>
+  <!-- Navbar menu -->
+
+</nav>

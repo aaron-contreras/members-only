@@ -1,15 +1,19 @@
-<% if member_signed_in? %>
-  <%= link_to 'Sign out', destroy_member_session_path, method: :delete %>
-<% else %>
-  <%= link_to 'Sign in', new_member_session_path %>
-<% end %>
-
 <% @posts.each do |post| %>
-  <div>
-    <h3><%= post.title %></h3>
-    <p><%= post.body %></h3>
-  <% if member_signed_in? %>
-    <p><%= post.member.name %></p>
-  <% end %>
+  <div class="block">
+    <div class="card">
+      <header class="card-header"> 
+          <p class="card-header-title is-centered title is-4"><%= post.title %></p>
+      </header>
+
+      <div class="card-content">
+        <div class="content is-medium">
+          <%= post.body %>
+        </div>
+        <div class="content is-small">
+           Posted <%= time_ago_in_words(post.created_at)%> ago</p>
+        </div>
+        <%= render partial: 'author', locals: { post: post } %>
+      </div>
+    </div>
   </div>
 <% end %>

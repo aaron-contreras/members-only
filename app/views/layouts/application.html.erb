@@ -8,11 +8,24 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'https://kit.fontawesome.com/b4937b662a.js', 'data-turbolinks-track': 'reload' %>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <%= stylesheet_link_tag "https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" %>
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <%= render "shared/notifications" %>
+    <%= render 'shared/header' %>
+
+    <div class="container">
+      <div class="columns">
+        <div class="column"></div>
+        <div class="column is-two-thirds">
+          <%= yield %>
+        </div>
+        <div class="column"></div>
+      </div>
+    </div>
+
   </body>
 </html>

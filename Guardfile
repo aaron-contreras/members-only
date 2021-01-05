@@ -17,9 +17,9 @@
 
 guard 'livereload' do
   extensions = {
+    scss: :scss,
+    sass: :scss,
     css: :css,
-    scss: :css,
-    sass: :css,
     js: :js,
     coffee: :js,
     html: :html,
@@ -29,6 +29,10 @@ guard 'livereload' do
     jpeg: :jpeg,
     # less: :less, # uncomment if you want LESS stylesheets done in browser
   }
+  # watching pre rails 4 path convention conforming assets:
+  watch(%r{(app|vendor)(/assets/\w+/(.+\.(css|js|html|png|jpg))).*}) { |m| "/assets/#{m[3]}" }
+  # watching "modern" path convention assets:
+  watch(%r{(app|vendor)(/assets/\w+/(.+)\.(scss))}) { |m| "/assets/#{m[3]}.css" }
 
   rails_view_exts = %w(erb haml slim)
 

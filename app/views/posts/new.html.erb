@@ -1,9 +1,22 @@
+<h1 class="title">Create a post</h1>
+
 <%= form_with model: @post do |form| %>
-  <%= form.label :title, 'Post title' %>
-  <%= form.text_field :title %>
+  <div class="field">
+    <%= form.label :title, 'Post title', class: 'label' %>
+    <div class="control">
+      <%= form.text_field :title, class: 'input' %>
+    </div>
+  </div>
 
-  <%= form.label :body, 'Post body' %>
-  <%= form.text_field :body, placeholder: "Let your ideas flow..." %>
+  <div class="field">
+    <%= form.label :body, 'Post body', class: 'label' %>
+    <div class="control">
+      <%= form.text_area :body, placeholder: "Let your ideas flow...",
+                         class: 'textarea' %>
+    </div>
+  </div>
 
-  <%= form.submit %>
+  <div class="field">
+    <%= form.submit class: 'button is-link' %>
+  </div>
 <% end %>

@@ -48,6 +48,7 @@ group :development do
   gem 'better_errors', '~> 2.9', '>= 2.9.1'
   gem 'guard-livereload', '~> 2.5', '>= 2.5.2', require: false
   gem 'rack-livereload', '~> 0.3.17'
+  gem 'sqlite3'
 end
 
 group :test do
